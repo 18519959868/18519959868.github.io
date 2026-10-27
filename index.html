@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的影视中心</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 20% -10%, #1c1a16 0%, #0f0f13 55%, #0a0a0d 100%);
+    color: #f2ede3;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 48px 24px 32px; }
+  header { text-align: center; margin-bottom: 42px; }
+  header .logo {
+    display: inline-block; font-size: 15px; letter-spacing: 4px; color: #e8b64c;
+    border: 1px solid #3a352a; border-radius: 30px; padding: 6px 22px; margin-bottom: 22px;
+  }
+  header h1 { font-size: 40px; font-weight: 700; letter-spacing: 2px; }
+  header p { margin-top: 12px; color: #8d8879; font-size: 14px; letter-spacing: 1px; }
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px;
+  }
+  .card {
+    position: relative; background: #181820; border: 1px solid #26262f; border-radius: 14px;
+    padding: 26px 24px 22px; text-decoration: none; color: inherit;
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    display: block; overflow: hidden;
+  }
+  .card::before {
+    content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 100%;
+    background: #e8b64c; border-radius: 0 4px 4px 0; opacity: .85;
+  }
+  .card:hover { transform: translateY(-4px); border-color: #e8b64c66; box-shadow: 0 14px 34px rgba(0,0,0,.45); }
+  .card .icon { font-size: 26px; margin-bottom: 12px; }
+  .card h3 { font-size: 19px; font-weight: 600; }
+  .card .desc { margin-top: 8px; font-size: 13px; color: #8d8879; line-height: 1.6; }
+  .card .tag {
+    display: inline-block; margin-top: 14px; font-size: 12px; color: #e8b64c;
+    background: #2a2417; border-radius: 20px; padding: 3px 12px;
+  }
+  .card .tag.off { color: #a09a8c; background: #23231f; }
+  .card .goto {
+    position: absolute; right: 20px; top: 22px; color: #55535c; font-size: 18px;
+  }
+  footer { text-align: center; margin-top: 46px; color: #6b675c; font-size: 12px; line-height: 1.9; }
+  footer code { background: #181820; border: 1px solid #26262f; border-radius: 4px; padding: 1px 6px; color: #b9b2a0; }
+  @media (max-width: 640px) {
+    header h1 { font-size: 30px; }
+    .wrap { padding: 32px 16px 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">PRIVATE CINEMA</div>
+    <h1>我的影视中心</h1>
+    <p>私有影视平台统一入口 · 模板页（尚未配置平台地址）</p>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="#">
+      <span class="goto">→</span>
+      <div class="icon">🎬</div>
+      <h3>我的影库 · Alist</h3>
+      <div class="desc">统一管理网盘影视资源，网页直接在线播放。替换此卡片链接为你自己的 Alist 地址即可。</div>
+      <span class="tag off">待配置</span>
+    </a>
+
+    <a class="card" href="#">
+      <span class="goto">→</span>
+      <div class="icon">🖼️</div>
+      <h3>影视墙 · Emby</h3>
+      <div class="desc">海报墙式影视库，自动刮削封面与简介，多端同步观看进度。</div>
+      <span class="tag off">待配置</span>
+    </a>
+
+    <a class="card" href="#">
+      <span class="goto">→</span>
+      <div class="icon">📺</div>
+      <h3>媒体库 · Jellyfin</h3>
+      <div class="desc">开源媒体中心，聚合电影、剧集与音乐，完全自托管。</div>
+      <span class="tag off">待配置</span>
+    </a>
+
+    <a class="card" href="#">
+      <span class="goto">→</span>
+      <div class="icon">🗄️</div>
+      <h3>私有网盘 · NAS</h3>
+      <div class="desc">NAS 影视资源文件夹入口，直接浏览与下载你的收藏。</div>
+      <span class="tag off">待配置</span>
+    </a>
+
+    <a class="card" href="#">
+      <span class="goto">→</span>
+      <div class="icon">🎞️</div>
+      <h3>剧集专区</h3>
+      <div class="desc">剧集分类入口（可指向影库对应文件夹或合集页面）。</div>
+      <span class="tag off">待配置</span>
+    </a>
+
+    <a class="card" href="#">
+      <span class="goto">→</span>
+      <div class="icon">🍿</div>
+      <h3>电影专区</h3>
+      <div class="desc">电影分类入口（可指向影库对应文件夹或合集页面）。</div>
+      <span class="tag off">待配置</span>
+    </a>
+  </div>
+
+  <footer>
+    模板使用说明：编辑本页源码，把每张卡片的 <code>href="#"</code> 替换为你私有平台的真实地址即可生效。<br>
+    已按要求屏蔽爱优腾等商业平台入口 · 页面由 GitHub Pages 托管
+  </footer>
+</div>
+</body>
+</html>
