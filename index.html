@@ -20,6 +20,11 @@
   }
   header h1 { font-size: 40px; font-weight: 700; letter-spacing: 2px; }
   header p { margin-top: 12px; color: #8d8879; font-size: 14px; letter-spacing: 1px; }
+  .section-title {
+    display: flex; align-items: center; gap: 12px; margin: 40px 0 18px;
+    font-size: 16px; letter-spacing: 2px; color: #e8b64c;
+  }
+  .section-title::after { content: ""; flex: 1; height: 1px; background: #2a2822; }
   .grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px;
   }
@@ -33,6 +38,7 @@
     content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 100%;
     background: #e8b64c; border-radius: 0 4px 4px 0; opacity: .85;
   }
+  .card.net::before { background: #d9534f; }
   .card:hover { transform: translateY(-4px); border-color: #e8b64c66; box-shadow: 0 14px 34px rgba(0,0,0,.45); }
   .card .icon { font-size: 26px; margin-bottom: 12px; }
   .card h3 { font-size: 19px; font-weight: 600; }
@@ -42,6 +48,7 @@
     background: #2a2417; border-radius: 20px; padding: 3px 12px;
   }
   .card .tag.off { color: #a09a8c; background: #23231f; }
+  .card .tag.on { color: #7ec699; background: #16281d; }
   .card .goto {
     position: absolute; right: 20px; top: 22px; color: #55535c; font-size: 18px;
   }
@@ -58,9 +65,10 @@
   <header>
     <div class="logo">PRIVATE CINEMA</div>
     <h1>我的影视中心</h1>
-    <p>私有影视平台统一入口 · 模板页（尚未配置平台地址）</p>
+    <p>私有影视平台 + 网络平台统一入口</p>
   </header>
 
+  <div class="section-title">▍ 私有平台（待配置）</div>
   <div class="grid">
     <a class="card" href="#">
       <span class="goto">→</span>
@@ -111,9 +119,60 @@
     </a>
   </div>
 
+  <div class="section-title">▍ 网络平台直达（正规平台）</div>
+  <div class="grid">
+    <a class="card net" href="https://www.bilibili.com" target="_blank" rel="noopener">
+      <span class="goto">→</span>
+      <div class="icon">📱</div>
+      <h3>哔哩哔哩</h3>
+      <div class="desc">海量影视、番剧、纪录片与 UP 主内容，免费在线观看。</div>
+      <span class="tag on">可直达</span>
+    </a>
+
+    <a class="card net" href="https://www.mgtv.com" target="_blank" rel="noopener">
+      <span class="goto">→</span>
+      <div class="icon">🎭</div>
+      <h3>芒果TV</h3>
+      <div class="desc">综艺、剧集、电影与纪录片，部分内容免费观看。</div>
+      <span class="tag on">可直达</span>
+    </a>
+
+    <a class="card net" href="https://www.ixigua.com" target="_blank" rel="noopener">
+      <span class="goto">→</span>
+      <div class="icon">🎬</div>
+      <h3>西瓜视频</h3>
+      <div class="desc">免费电影、短剧与创作者内容，无需会员即可观看。</div>
+      <span class="tag on">可直达</span>
+    </a>
+
+    <a class="card net" href="https://www.yangshipin.cn" target="_blank" rel="noopener">
+      <span class="goto">→</span>
+      <div class="icon">🇨🇳</div>
+      <h3>央视频</h3>
+      <div class="desc">央视官方平台，纪录片、新闻、影视与体育赛事免费看。</div>
+      <span class="tag on">可直达</span>
+    </a>
+
+    <a class="card net" href="https://www.miguvideo.com" target="_blank" rel="noopener">
+      <span class="goto">→</span>
+      <div class="icon">📡</div>
+      <h3>咪咕视频</h3>
+      <div class="desc">影视、体育、综艺与短剧，中国移动旗下正规平台。</div>
+      <span class="tag on">可直达</span>
+    </a>
+
+    <a class="card net" href="https://www.1905.com" target="_blank" rel="noopener">
+      <span class="goto">→</span>
+      <div class="icon">🎥</div>
+      <h3>1905电影网</h3>
+      <div class="desc">电影频道官方平台，海量华语电影与经典影片免费看。</div>
+      <span class="tag on">可直达</span>
+    </a>
+  </div>
+
   <footer>
-    模板使用说明：编辑本页源码，把每张卡片的 <code>href="#"</code> 替换为你私有平台的真实地址即可生效。<br>
-    已按要求屏蔽爱优腾等商业平台入口 · 页面由 GitHub Pages 托管
+    模板使用说明：编辑本页源码，把「私有平台」卡片的 <code>href="#"</code> 替换为你平台的真实地址即可生效；「网络平台直达」卡片已配置好正规平台官网。<br>
+    已按要求屏蔽爱优腾等平台入口 · 页面由 GitHub Pages 托管
   </footer>
 </div>
 </body>
